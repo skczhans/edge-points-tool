@@ -26,7 +26,7 @@ def getScore(str, l):
     for i in l:
         times += 1
         run_pc(i)
-        print(str + 'the' , times, ' done') 
+        print(str + '第' , times, '搜索')
         time.sleep(2)
     driver.quit()
     
@@ -39,6 +39,6 @@ if __name__ == "__main__" :
     mobile_emulation = {"deviceName": "Galaxy Fold"}  # 添加移动设备搜索参数
     options.add_experimental_option("mobileEmulation",mobile_emulation)  # 使用移动设备搜索模拟器打开  
     driver = webdriver.Edge(service=service, options=options)
-    getScore('Modile', List[:timeMobile])
-    print('Modile done')
+    getScore('移动搜索', List[:timeMobile])
+    print('移动搜索完成')
     
