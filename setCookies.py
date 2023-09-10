@@ -12,7 +12,7 @@ driver = webdriver.Edge(service=service)
 # 记得写完整的url 包括http和https
 driver.get('https://cn.bing.com/')
 
-# 程序打开网页后10秒内 “手动登陆账户”
+# 程序打开网页后30秒内 “手动登陆账户”
 time.sleep(30)
 
 with open('cookies.txt', 'w') as f:
