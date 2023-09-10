@@ -1,4 +1,3 @@
-from hmac import new
 import json
 import random
 from selenium import webdriver
@@ -57,13 +56,11 @@ if __name__ == "__main__":
     getScore('电脑搜索', List[timesEdge:timesEdge + timesPC])
     print('电脑搜索完成')
 
-    # 移动设备搜索 
-    mobile_emulation = {
-                        "deviceMetrics": { "width": 414, "height": 896, "pixelRatio": 3.0 },
-                        "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1 Edg/115.0.0.0"
-                        }  # 添加移动设备搜索
-    options.add_experimental_option("mobileEmulation",mobile_emulation)  # 使用移动设备搜索模拟器打开  
-    driver = webdriver.Edge(service=service, options=options)
+    # 移动设备搜索
+    optionsMobile = Options() 
+    mobile_emulation = {"deviceName": "Galaxy Fold"}  # 添加移动设备搜索参数
+    optionsMobile.add_experimental_option("mobileEmulation",mobile_emulation)  # 使用移动设备搜索模拟器打开  
+    driver = webdriver.Edge(service=service, options=optionsMobile)
     getScore('移动设备搜索', List[timesEdge + timesPC:])
     print('移动设备搜索完成')
 
