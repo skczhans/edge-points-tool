@@ -7,9 +7,9 @@ from selenium.webdriver.edge.options import Options
 import time
 
 def OpenUrl(url):
-    # ·ÃÎÊÍøÖ·
+    # è®¿é—®ç½‘å€
     driver.get(url)
-    with open('cookies.txt', 'r') as f:  # ÓÉÓÚwebdriverÆô¶¯Ê±ÀàËÆÎŞºÛÄ£Ê½£¬Ê¹ÓÃ´øcookieµÄ·½Ê½µÇÂ¼Î¢ÈíÕËºÅ
+    with open('cookies.txt', 'r') as f:  # ç”±äºwebdriverå¯åŠ¨æ—¶ç±»ä¼¼æ— ç—•æ¨¡å¼ï¼Œä½¿ç”¨å¸¦cookieçš„æ–¹å¼ç™»å½•å¾®è½¯è´¦å·
         cookies_list = json.load(f)
         for cookie in cookies_list:
             if isinstance(cookie.get('expiry'), float):
@@ -17,7 +17,7 @@ def OpenUrl(url):
             driver.add_cookie(cookie)
             
 def run_pc(random_number):
-    #Éú³ÉÁ´½Ó
+    #ç”Ÿæˆé“¾æ¥
     OpenUrl('https://cn.bing.com/search?q=' + str(random_number))
     
 def getScore(str, l):
@@ -25,18 +25,18 @@ def getScore(str, l):
     for i in l:
         times += 1
         run_pc(i)
-        print(str + "µÚ" , times, ' done')
+        print(str + 'the' , times, ' done')Â 
         time.sleep(2)
     driver.quit()
     
 if __name__ == "__main__" :
-    timeMobile = 30 #ÉèÖÃËÑË÷´ÎÊı
-    List = random.sample(range(1,10000),timeMobile) #Éú³ÉËæ»úÊıÁĞ
-    driverPath = './msedgedriver' #ÉèÖÃÇı¶¯Â·¾¶
-    service = Service(driverPath = driverPath) #µ¼ÈëÇı¶¯
-    options = Options() #²ÎÊı³õÊ¼»¯
-    mobile_emulation = {"deviceName": "Galaxy Fold"}  # Ìí¼ÓÒÆ¶¯Éè±¸ËÑË÷²ÎÊı
-    options.add_experimental_option("mobileEmulation",mobile_emulation)  # Ê¹ÓÃÒÆ¶¯Éè±¸ËÑË÷Ä£ÄâÆ÷´ò¿ª  
+    timeMobile = 30 #è®¾ç½®æœç´¢æ¬¡æ•°
+    List = random.sample(range(1,10000),timeMobile) #ç”Ÿæˆéšæœºæ•°åˆ—
+    driverPath = './msedgedriver' #è®¾ç½®é©±åŠ¨è·¯å¾„
+    service = Service(driverPath = driverPath) #å¯¼å…¥é©±åŠ¨
+    options = Options() #å‚æ•°åˆå§‹åŒ–
+    mobile_emulation = {"deviceName": "Galaxy Fold"}  # æ·»åŠ ç§»åŠ¨è®¾å¤‡æœç´¢å‚æ•°
+    options.add_experimental_option("mobileEmulation",mobile_emulation)  # ä½¿ç”¨ç§»åŠ¨è®¾å¤‡æœç´¢æ¨¡æ‹Ÿå™¨æ‰“å¼€  
     driver = webdriver.Edge(service=service, options=options)
     getScore('Modile', List[:timeMobile])
     print('Modile done')
