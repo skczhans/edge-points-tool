@@ -40,19 +40,20 @@ if __name__ == "__main__":
     timesSum = timesEdge + timesPC + timesMobile  # 总次数
     List = random.sample(range(1, 10000), timesSum) #生成随机数
 
-    options = Options()
     # 设置driver路径
     driverPath = './msedgedriver'
     service = Service(driverPath=driverPath)
 
     # Microsoft Edge奖励
+    options = Options()
     driver = webdriver.Edge(service=service, options=options)
     getScore('Edge奖励', List[:timesEdge])
     print('Microsoft Edge奖励完成')
 
     # 电脑搜索
-    options.add_argument("--headless")  # 设置后台运行，无窗口化
-    driver = webdriver.Edge(service=service, options=options)
+    optionsPC = Options()
+    optionsPC.add_argument("--headless")  # 设置后台运行，无窗口化
+    driver = webdriver.Edge(service=service, options=optionsPC)
     getScore('电脑搜索', List[timesEdge:timesEdge + timesPC])
     print('电脑搜索完成')
 
