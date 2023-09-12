@@ -36,7 +36,7 @@ if __name__ == "__main__" :
     driverPath = './msedgedriver' #设置驱动路径
     service = Service(driverPath = driverPath) #导入驱动
     options = Options() #参数初始化
-    mobile_emulation = {"deviceName": "Galaxy Fold"}  # 添加移动设备搜索参数
+    mobile_emulation = {"deviceName": "Pixel 5"}  # 添加移动设备搜索参数
     options.add_experimental_option("mobileEmulation",mobile_emulation)  # 使用移动设备搜索模拟器打开  
     driver = webdriver.Edge(service=service, options=options)
     getScore('移动搜索', List[:timeMobile])
