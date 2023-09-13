@@ -30,10 +30,6 @@ def getScore(str, l):
         time.sleep(2)
     driver.quit()
     
-if __name__ == "__main__" :
-    run()
-    
-
 def run():
     timeMobile = 30 #设置搜索次数
     List = random.sample(range(1,10000),timeMobile) #生成随机数列
@@ -46,3 +42,5 @@ def run():
     getScore('移动搜索', List[:timeMobile])
     print('移动搜索完成')
     
+if __name__ == "__main__" :
+    run()
