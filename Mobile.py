@@ -17,7 +17,7 @@ def OpenUrl(url):
                 cookie['expiry'] = int(cookie['expiry'])
             driver.add_cookie(cookie)
             
-def run_pc(random_number):
+def run_search(random_number):
     #生成链接
     OpenUrl('https://cn.bing.com/search?q=' + str(random_number))
     
@@ -25,12 +25,16 @@ def getScore(str, l):
     times = 0
     for i in l:
         times += 1
-        run_pc(i)
+        run_search(i)
         print(str + '第' , times, '搜索')
         time.sleep(2)
     driver.quit()
     
 if __name__ == "__main__" :
+    run()
+    
+
+def run():
     timeMobile = 30 #设置搜索次数
     List = random.sample(range(1,10000),timeMobile) #生成随机数列
     driverPath = './msedgedriver' #设置驱动路径
