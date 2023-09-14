@@ -7,6 +7,9 @@ from selenium.webdriver.edge.options import Options
 
 import time
 
+def drive():
+    
+
 def OpenUrl(url):
     # 访问网址
     driver.get(url)
