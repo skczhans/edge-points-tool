@@ -36,7 +36,7 @@ def getScore(str, l):
 if __name__ == "__main__":
     timesEdge = 6  # Microsoft Edge奖励次数
     timesPC = 34  # 电脑搜索次数
-    timesMobile = 30  # 移动设备搜索次数
+    timesMobile = 22  # 移动设备搜索次数
     timesSum = timesEdge + timesPC + timesMobile  # 总次数
     List = random.sample(range(1, 10000), timesSum) #生成随机数
 
