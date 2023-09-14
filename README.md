@@ -35,4 +35,4 @@ https://blog.csdn.net/weixin_39379132/article/details/129004864
 
 ###### 可能出现的问题
 
-1. 手机端脚本运行时积分可能不会增加，若未增加请修改execute.py文件中“'deviceName': 'Galaxy S5'”语句，机型可从下面列表中自选
+1. 手机端脚本运行时积分可能不会增加，若未增加请修改execute.py文件中“'deviceName': 'Galaxy S5'”语句，机型列表可以在浏览器中查找
